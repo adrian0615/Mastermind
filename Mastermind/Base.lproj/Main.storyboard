@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UYA-qj-2UA">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Mastermind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-zr-FDM" customClass="PCView" customModule="Mastermind" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="RHD-fC-tHF"/>
+                                    <constraint firstAttribute="height" constant="480" id="V6R-Bu-h18"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Cu-zr-FDM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="839-oy-N1h"/>
+                            <constraint firstItem="1Cu-zr-FDM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gaL-s5-WbL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SmI-m1-OzN"/>
+                    <connections>
+                        <outlet property="pcView" destination="1Cu-zr-FDM" id="7qI-wv-pjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189" y="150"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="EH3-Ig-yzh">
+            <objects>
+                <viewController storyboardIdentifier="LaunchViewController" id="UYA-qj-2UA" customClass="LaunchViewController" customModule="Mastermind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kgk-Q0-Z7k"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5o-qj-9ez"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wbH-kz-o5D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mastermind" translatesAutoresizingMaskIntoConstraints="NO" id="otn-Xr-lsv">
+                                <rect key="frame" x="16" y="107" width="288" height="266"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="otn-Xr-lsv" firstAttribute="centerY" secondItem="wbH-kz-o5D" secondAttribute="centerY" id="VqI-d3-X7H"/>
+                            <constraint firstItem="otn-Xr-lsv" firstAttribute="centerX" secondItem="wbH-kz-o5D" secondAttribute="centerX" id="bUL-nl-lSE"/>
+                            <constraint firstItem="otn-Xr-lsv" firstAttribute="leading" secondItem="wbH-kz-o5D" secondAttribute="leadingMargin" id="eil-6q-G5T"/>
+                            <constraint firstItem="otn-Xr-lsv" firstAttribute="trailing" secondItem="wbH-kz-o5D" secondAttribute="trailingMargin" id="twU-jw-rcc"/>
+                            <constraint firstItem="otn-Xr-lsv" firstAttribute="top" secondItem="Kgk-Q0-Z7k" secondAttribute="bottom" constant="87" id="y5T-km-Itu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6O8-UJ-2kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418" y="150"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mastermind" width="250" height="250"/>
+    </resources>
+</document>
