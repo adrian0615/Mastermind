@@ -12,12 +12,8 @@ import UIKit
 
 public class MastermindStyleKit : NSObject {
     
-    //// Drawing Methods
+    var button = UIButton()
     
-    //define view size
-    //self.mTableView.frame = self.view.bounds
-    //define resizing
-    //self.mTableView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
     
     public dynamic class func drawMastermind(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 480), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
@@ -112,7 +108,7 @@ public class MastermindStyleKit : NSObject {
         context.clip(to: ovalPathRect)
         ovalPathTextContent.draw(in: CGRect(x: ovalPathRect.minX, y: ovalPathRect.minY + (ovalPathRect.height - ovalPathTextHeight) / 2, width: ovalPathRect.width, height: ovalPathTextHeight), withAttributes: ovalPathFontAttributes)
         context.restoreGState()
-
+        
         
         //// Rectangle 9 Drawing
         let rectangle9Rect = CGRect(x: 223, y: 373, width: 34, height: 34)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UYA-qj-2UA">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-zr-FDM" customClass="PCView" customModule="Mastermind" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-zr-FDM" customClass="PCView" customModule="Mastermind" customModuleProvider="target">
+                                <rect key="frame" x="27.5" y="93.5" width="320" height="480"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="RHD-fC-tHF"/>
                                     <constraint firstAttribute="height" constant="480" id="V6R-Bu-h18"/>
@@ -54,11 +54,11 @@
                         <viewControllerLayoutGuide type="bottom" id="J5o-qj-9ez"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wbH-kz-o5D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mastermind" translatesAutoresizingMaskIntoConstraints="NO" id="otn-Xr-lsv">
-                                <rect key="frame" x="16" y="107" width="288" height="266"/>
+                                <rect key="frame" x="16" y="107" width="343" height="453"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

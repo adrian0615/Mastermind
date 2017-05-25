@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var selectedfromEightColor: Ball = .empty
 
     
-    
+    var timer = Timer()
     
     
     func colorSelect(sender: UIButton!) {
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
             
             selectedfromEightColor = .red
             
+            self.view.backgroundColor = selectedfromEightColor.value
+            
             print("red button tapped")
         }
         
@@ -58,6 +60,8 @@ class ViewController: UIViewController {
             pcView.orangeButton.layer.borderColor = UIColor.black.cgColor
             
             selectedfromEightColor = .orange
+            
+            self.view.backgroundColor = selectedfromEightColor.value
             
             print("orange button tapped")
         }
@@ -77,6 +81,8 @@ class ViewController: UIViewController {
             
             selectedfromEightColor = .yellow
             
+            self.view.backgroundColor = selectedfromEightColor.value
+            
             print("yellow button tapped")
         }
         
@@ -94,6 +100,8 @@ class ViewController: UIViewController {
             pcView.brownButton.layer.borderColor = UIColor.black.cgColor
             
             selectedfromEightColor = .brown
+            
+            self.view.backgroundColor = selectedfromEightColor.value
             
             print("brown button tapped")
         }
@@ -113,6 +121,8 @@ class ViewController: UIViewController {
             
             selectedfromEightColor = .blue
             
+            self.view.backgroundColor = selectedfromEightColor.value
+            
             print("blue button tapped")
         }
         
@@ -130,6 +140,8 @@ class ViewController: UIViewController {
             pcView.greenButton.layer.borderColor = UIColor.black.cgColor
             
             selectedfromEightColor = .green
+            
+            self.view.backgroundColor = selectedfromEightColor.value
             
             print("green button tapped")
         }
@@ -149,6 +161,8 @@ class ViewController: UIViewController {
             
             selectedfromEightColor = .cyan
             
+            self.view.backgroundColor = selectedfromEightColor.value
+            
             print("cyan button tapped")
         }
         
@@ -166,6 +180,8 @@ class ViewController: UIViewController {
             pcView.purpleButton.layer.borderColor = UIColor.black.cgColor
             
             selectedfromEightColor = .purple
+            
+            self.view.backgroundColor = selectedfromEightColor.value
             
             print("purple button tapped")
         }
@@ -1737,6 +1753,11 @@ class ViewController: UIViewController {
             pcView.blueButton.isEnabled = false
             pcView.blueButton.backgroundColor = gameBoard.fourBalls[3].value
             
+            
+            self.view.backgroundColor = gameBoard.fourBalls[0].value
+            
+            
+            
             pcView.yellowButton.layer.borderWidth = 4.0
             pcView.greenButton.layer.borderWidth = 4.0
             pcView.brownButton.layer.borderWidth = 4.0
@@ -1753,6 +1774,9 @@ class ViewController: UIViewController {
             pcView.blueButton.layer.borderColor = UIColor.black.cgColor
             
             
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.updateColor), userInfo: nil, repeats: true)
+            
+            
             
             let ac = UIAlertController(title: title, message: "YOU WIN!", preferredStyle: .alert)
             let action = UIAlertAction(title: "NEW GAME", style: .default, handler: gameOptions)
@@ -1764,8 +1788,32 @@ class ViewController: UIViewController {
     }
     }
     
+    func updateColor() {
+        let nextColor = getNextColor()
+        UIView.animate(withDuration: 1.0, animations: {
+            self.view.backgroundColor = nextColor
+        })
+    }
+    
+    func getNextColor() -> UIColor {
+        let currentColor = self.view.backgroundColor
+        
+        if currentColor == pcView.yellowButton.backgroundColor {
+            return pcView.greenButton.backgroundColor!
+        } else if currentColor == pcView.greenButton.backgroundColor {
+            return pcView.brownButton.backgroundColor!
+        } else if currentColor == pcView.brownButton.backgroundColor {
+            return pcView.blueButton.backgroundColor!
+        } else {
+            return pcView.yellowButton.backgroundColor!
+        }
+    }
+    
+    
     func gameOptions(action: UIAlertAction!) {
         print("pressed restart button")
+        
+        self.timer.invalidate()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -1779,6 +1827,8 @@ class ViewController: UIViewController {
     func infoSelect(sender: UIButton!) {
         print("pressed info button")
         
+        self.view.backgroundColor = UIColor.white
+        
         let ac = UIAlertController(title: "HOW TO PLAY", message: "The computer generates a random code of 4 different colors.  Using the 8 colors provided below, you will have 8 chances to guess the 4 correct colors and the order of the colors.\n\nTo choose a color, tap on the color and then tap where you want to place the color.  Once you have placed 4 different colors in the horizontal row, tap the 'OK' button to continue.\n\nThe computer will show a white dot for each color you have guessed correctly, but is in the wrong position.  The computer will show a black dot for each color that is correct and in the right position.", preferredStyle: .alert)
         let action = UIAlertAction(title: "CLOSE", style: .default, handler: nil)
         
@@ -1789,6 +1839,8 @@ class ViewController: UIViewController {
     
     func menuSelect(sender: UIButton!) {
         print("pressed menu button")
+        
+        self.view.backgroundColor = UIColor.white
         
         let ac = UIAlertController(title: title, message: "MENU", preferredStyle: .alert)
         let howToAction = UIAlertAction(title: "HOW TO PLAY", style: .default, handler: howToPlay)
@@ -1831,7 +1883,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.lightGray
         
         view.addSubview(pcView)
         
@@ -1855,6 +1906,9 @@ class ViewController: UIViewController {
         
         
         gameBoard.fourBalls = colorCode
+        
+        view.backgroundColor = shuffledBalls[6].value
+        
        
         //Button Targets
         
