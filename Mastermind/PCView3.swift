@@ -1,235 +1,235 @@
 //
-//  PCView.swift
+//  PCView3.swift
 //  Mastermind
 //
-//  Created by Adrian McDaniel on 1/21/17.
+//  Created by Adrian McDaniel on 5/27/17.
 //  Copyright © 2017 dssafsfsd. All rights reserved.
 //
 
 import UIKit
 
-class PCView: UIView {
-    
-    var myStyleKit = MastermindStyleKit()
+class PCView3: UIView {
+
+    var myStyleKit3 = Mastermind3StyleKit()
     
     
     
     /////////////////////Info Button//////////////////////////
     
-    var infoButton = UIButton(frame: CGRect(x: 270, y: 16, width: 33, height: 33))
+    var infoButton = UIButton(frame: CGRect(x: 303, y: 27, width: 50, height: 50))
     
     /////////////////////Menu Button///////////////////////////
     
-    var menuButton = UIButton(frame: CGRect(x: 21, y: 16, width: 33, height: 33))
-
+    var menuButton = UIButton(frame: CGRect(x: 18, y: 27, width: 50, height: 50))
+    
     
     //////////////////Button Color Row/////////////////////////
     
-    var redButton = UIButton(frame: CGRect(x: 5, y: 426, width: 34, height: 34))
+    var redButton = UIButton(frame: CGRect(x: 10, y: 603, width: 40, height: 40))
     
     
-    var orangeButton = UIButton(frame: CGRect(x: 46, y: 426, width: 34, height: 34))
-    
-    
-    
-    var yellowButton = UIButton(frame: CGRect(x: 85, y: 426, width: 34, height: 34))
+    var orangeButton = UIButton(frame: CGRect(x: 55, y: 603, width: 40, height: 40))
     
     
     
-    var brownButton = UIButton(frame: CGRect(x: 164, y: 426, width: 34, height: 34))
+    var yellowButton = UIButton(frame: CGRect(x: 100, y: 603, width: 40, height: 40))
     
     
     
-    var blueButton = UIButton(frame: CGRect(x: 203, y: 426, width: 34, height: 34))
+    var brownButton = UIButton(frame: CGRect(x: 190, y: 603, width: 40, height: 40))
     
     
     
-    var greenButton = UIButton(frame: CGRect(x: 124, y: 426, width: 34, height: 34))
+    var blueButton = UIButton(frame: CGRect(x: 235, y: 603, width: 40, height: 40))
     
     
     
-    var cyanButton = UIButton(frame: CGRect(x: 243, y: 426, width: 34, height: 34))
+    var greenButton = UIButton(frame: CGRect(x: 145, y: 603, width: 40, height: 40))
     
     
     
-    var purpleButton = UIButton(frame: CGRect(x: 282, y: 426, width: 34, height: 34))
+    var cyanButton = UIButton(frame: CGRect(x: 280, y: 603, width: 40, height: 40))
+    
+    
+    
+    var purpleButton = UIButton(frame: CGRect(x: 325, y: 603, width: 40, height: 40))
     
     
     
     //////////////////First Row/////////////////////////
     
-    var a1Button = UIButton(frame: CGRect(x: 18, y: 373, width: 34, height: 34))
+    var a1Button = UIButton(frame: CGRect(x: 21, y: 537, width: 42, height: 42))
     
     
     
-    var b1Button = UIButton(frame: CGRect(x: 69, y: 373, width: 34, height: 34))
+    var b1Button = UIButton(frame: CGRect(x: 83, y: 537, width: 42, height: 42))
     
     
     
-    var c1Button = UIButton(frame: CGRect(x: 118, y: 373, width: 34, height: 34))
+    var c1Button = UIButton(frame: CGRect(x: 144, y: 537, width: 42, height: 42))
     
     
     
-    var d1Button = UIButton(frame: CGRect(x: 169, y: 373, width: 34, height: 34))
+    var d1Button = UIButton(frame: CGRect(x: 203, y: 537, width: 42, height: 42))
     
     
     
-    var ok1Button = UIButton(frame: CGRect(x: 223, y: 373, width: 34, height: 34))
+    var ok1Button = UIButton(frame: CGRect(x: 266, y: 537, width: 42, height: 42))
     
     
     
     //////////////////Second Row/////////////////////////
     
-    var a2Button = UIButton(frame: CGRect(x: 18, y: 328, width: 34, height: 34))
+    var a2Button = UIButton(frame: CGRect(x: 21, y: 475, width: 42, height: 42))
     
     
     
-    var b2Button = UIButton(frame: CGRect(x: 69, y: 328, width: 34, height: 34))
+    var b2Button = UIButton(frame: CGRect(x: 83, y: 475, width: 42, height: 42))
     
     
     
-    var c2Button = UIButton(frame: CGRect(x: 118, y: 328, width: 34, height: 34))
+    var c2Button = UIButton(frame: CGRect(x: 144, y: 475, width: 42, height: 42))
     
     
     
-    var d2Button = UIButton(frame: CGRect(x: 169, y: 328, width: 34, height: 34))
+    var d2Button = UIButton(frame: CGRect(x: 203, y: 475, width: 42, height: 42))
     
     
     
-    var ok2Button = UIButton(frame: CGRect(x: 223, y: 328, width: 34, height: 34))
+    var ok2Button = UIButton(frame: CGRect(x: 266, y: 475, width: 42, height: 42))
     
     
     
     //////////////////Third Row/////////////////////////
     
-    var a3Button = UIButton(frame: CGRect(x: 18, y: 283, width: 34, height: 34))
+    var a3Button = UIButton(frame: CGRect(x: 21, y: 412, width: 42, height: 42))
     
     
     
-    var b3Button = UIButton(frame: CGRect(x: 69, y: 283, width: 34, height: 34))
+    var b3Button = UIButton(frame: CGRect(x: 83, y: 412, width: 42, height: 42))
     
     
     
-    var c3Button = UIButton(frame: CGRect(x: 118, y: 283, width: 34, height: 34))
+    var c3Button = UIButton(frame: CGRect(x: 144, y: 412, width: 42, height: 42))
     
     
     
-    var d3Button = UIButton(frame: CGRect(x: 169, y: 283, width: 34, height: 34))
+    var d3Button = UIButton(frame: CGRect(x: 203, y: 412, width: 42, height: 42))
     
     
     
-    var ok3Button = UIButton(frame: CGRect(x: 223, y: 283, width: 34, height: 34))
+    var ok3Button = UIButton(frame: CGRect(x: 266, y: 412, width: 42, height: 42))
     
     
     
     //////////////////Fourth Row/////////////////////////
     
-    var a4Button = UIButton(frame: CGRect(x: 18, y: 238, width: 34, height: 34))
+    var a4Button = UIButton(frame: CGRect(x: 21, y: 350, width: 42, height: 42))
     
     
     
-    var b4Button = UIButton(frame: CGRect(x: 69, y: 238, width: 34, height: 34))
-
+    var b4Button = UIButton(frame: CGRect(x: 83, y: 350, width: 42, height: 42))
     
     
     
-    var c4Button = UIButton(frame: CGRect(x: 118, y: 238, width: 34, height: 34))
+    
+    var c4Button = UIButton(frame: CGRect(x: 144, y: 350, width: 42, height: 42))
     
     
     
-    var d4Button = UIButton(frame: CGRect(x: 169, y: 238, width: 34, height: 34))
+    var d4Button = UIButton(frame: CGRect(x: 203, y: 350, width: 42, height: 42))
     
     
     
-    var ok4Button = UIButton(frame: CGRect(x: 223, y: 239, width: 34, height: 34))
+    var ok4Button = UIButton(frame: CGRect(x: 266, y: 350, width: 42, height: 42))
     
     
     
     //////////////////Fifth Row/////////////////////////
     
-    var a5Button = UIButton(frame: CGRect(x: 18, y: 195, width: 34, height: 34))
+    var a5Button = UIButton(frame: CGRect(x: 21, y: 289, width: 42, height: 42))
     
     
     
-    var b5Button = UIButton(frame: CGRect(x: 69, y: 195, width: 34, height: 34))
+    var b5Button = UIButton(frame: CGRect(x: 83, y: 289, width: 42, height: 42))
     
     
     
-    var c5Button = UIButton(frame: CGRect(x: 118, y: 195, width: 34, height: 34))
+    var c5Button = UIButton(frame: CGRect(x: 144, y: 289, width: 42, height: 42))
     
     
     
-    var d5Button = UIButton(frame: CGRect(x: 169, y: 195, width: 34, height: 34))
+    var d5Button = UIButton(frame: CGRect(x: 203, y: 289, width: 42, height: 42))
     
     
     
-    var ok5Button = UIButton(frame: CGRect(x: 223, y: 195, width: 34, height: 34))
+    var ok5Button = UIButton(frame: CGRect(x: 266, y: 289, width: 42, height: 42))
     
     
     
     //////////////////Sixth Row/////////////////////////
     
-    var a6Button = UIButton(frame: CGRect(x: 18, y: 150, width: 34, height: 34))
+    var a6Button = UIButton(frame: CGRect(x: 21, y: 227, width: 42, height: 42))
     
     
     
-    var b6Button = UIButton(frame: CGRect(x: 69, y: 150, width: 34, height: 34))
+    var b6Button = UIButton(frame: CGRect(x: 83, y: 227, width: 42, height: 42))
     
     
     
-    var c6Button = UIButton(frame: CGRect(x: 118, y: 150, width: 34, height: 34))
+    var c6Button = UIButton(frame: CGRect(x: 144, y: 227, width: 42, height: 42))
     
     
     
-    var d6Button = UIButton(frame: CGRect(x: 169, y: 150, width: 34, height: 34))
+    var d6Button = UIButton(frame: CGRect(x: 203, y: 227, width: 42, height: 42))
     
     
     
-    var ok6Button = UIButton(frame: CGRect(x: 223, y: 150, width: 34, height: 34))
+    var ok6Button = UIButton(frame: CGRect(x: 266, y: 227, width: 42, height: 42))
     
     
     
     //////////////////Seventh Row/////////////////////////
     
-    var a7Button = UIButton(frame: CGRect(x: 18, y: 105, width: 34, height: 34))
+    var a7Button = UIButton(frame: CGRect(x: 21, y: 164, width: 42, height: 42))
     
     
     
-    var b7Button = UIButton(frame: CGRect(x: 69, y: 105, width: 34, height: 34))
+    var b7Button = UIButton(frame: CGRect(x: 83, y: 164, width: 42, height: 42))
     
     
     
-    var c7Button = UIButton(frame: CGRect(x: 118, y: 105, width: 34, height: 34))
+    var c7Button = UIButton(frame: CGRect(x: 144, y: 164, width: 42, height: 42))
     
     
     
-    var d7Button = UIButton(frame: CGRect(x: 169, y: 105, width: 34, height: 34))
+    var d7Button = UIButton(frame: CGRect(x: 203, y: 164, width: 42, height: 42))
     
     
     
-    var ok7Button = UIButton(frame: CGRect(x: 223, y: 105, width: 34, height: 34))
+    var ok7Button = UIButton(frame: CGRect(x: 266, y: 164, width: 42, height: 42))
     
     
     
     //////////////////Eighth Row/////////////////////////
     
-    var a8Button = UIButton(frame: CGRect(x: 18, y: 60, width: 34, height: 34))
+    var a8Button = UIButton(frame: CGRect(x: 21, y: 102, width: 42, height: 42))
     
     
     
-    var b8Button = UIButton(frame: CGRect(x: 69, y: 60, width: 34, height: 34))
+    var b8Button = UIButton(frame: CGRect(x: 83, y: 102, width: 42, height: 42))
     
     
     
-    var c8Button = UIButton(frame: CGRect(x: 118, y: 60, width: 34, height: 34))
+    var c8Button = UIButton(frame: CGRect(x: 144, y: 102, width: 42, height: 42))
     
     
     
-    var d8Button = UIButton(frame: CGRect(x: 169, y: 60, width: 34, height: 34))
+    var d8Button = UIButton(frame: CGRect(x: 203, y: 102, width: 42, height: 42))
     
     
     
-    var ok8Button = UIButton(frame: CGRect(x: 223, y: 61, width: 34, height: 34))
+    var ok8Button = UIButton(frame: CGRect(x: 266, y: 102, width: 42, height: 42))
     
     
     
@@ -243,148 +243,148 @@ class PCView: UIView {
     
     //////////////////First Row/////////////////////////
     
-    var a1Dot = UIButton(frame: CGRect(x: 287, y: 393, width: 13, height: 14))
+    var a1Dot = UIButton(frame: CGRect(x: 341, y: 561, width: 17, height: 18))
     
     
     
-    var b1Dot = UIButton(frame: CGRect(x: 287, y: 373, width: 13, height: 14))
+    var b1Dot = UIButton(frame: CGRect(x: 341, y: 537, width: 17, height: 18))
     
     
     
-    var c1Dot = UIButton(frame: CGRect(x: 270, y: 373, width: 13, height: 14))
+    var c1Dot = UIButton(frame: CGRect(x: 319, y: 537, width: 17, height: 18))
     
     
     
-    var d1Dot = UIButton(frame: CGRect(x: 270, y: 393, width: 13, height: 14))
+    var d1Dot = UIButton(frame: CGRect(x: 319, y: 561, width: 17, height: 18))
     
     
     
     //////////////////Second Row/////////////////////////
     
-    var a2Dot = UIButton(frame: CGRect(x: 287, y: 348, width: 13, height: 14))
+    var a2Dot = UIButton(frame: CGRect(x: 341, y: 499, width: 17, height: 18))
     
     
     
-    var b2Dot = UIButton(frame: CGRect(x: 287, y: 328, width: 13, height: 14))
+    var b2Dot = UIButton(frame: CGRect(x: 341, y: 475, width: 17, height: 18))
     
     
     
-    var c2Dot = UIButton(frame: CGRect(x: 270, y: 328, width: 13, height: 14))
+    var c2Dot = UIButton(frame: CGRect(x: 319, y: 475, width: 17, height: 18))
     
     
     
-    var d2Dot = UIButton(frame: CGRect(x: 270, y: 348, width: 13, height: 14))
+    var d2Dot = UIButton(frame: CGRect(x: 319, y: 499, width: 17, height: 18))
     
     
     
     //////////////////Third Row/////////////////////////
     
-    var a3Dot = UIButton(frame: CGRect(x: 287, y: 303, width: 13, height: 14))
+    var a3Dot = UIButton(frame: CGRect(x: 341, y: 436, width: 17, height: 18))
     
     
     
-    var b3Dot = UIButton(frame: CGRect(x: 287, y: 283, width: 13, height: 14))
+    var b3Dot = UIButton(frame: CGRect(x: 341, y: 412, width: 17, height: 18))
     
     
     
-    var c3Dot = UIButton(frame: CGRect(x: 270, y: 283, width: 13, height: 14))
+    var c3Dot = UIButton(frame: CGRect(x: 319, y: 412, width: 17, height: 18))
     
     
     
-    var d3Dot = UIButton(frame: CGRect(x: 270, y: 303, width: 13, height: 14))
+    var d3Dot = UIButton(frame: CGRect(x: 319, y: 436, width: 17, height: 18))
     
     
     //////////////////Fourth Row/////////////////////////
     
-    var a4Dot = UIButton(frame: CGRect(x: 287, y: 259, width: 13, height: 14))
+    var a4Dot = UIButton(frame: CGRect(x: 341, y: 374, width: 17, height: 18))
     
     
     
-    var b4Dot = UIButton(frame: CGRect(x: 287, y: 239, width: 13, height: 14))
+    var b4Dot = UIButton(frame: CGRect(x: 341, y: 350, width: 17, height: 18))
     
     
     
-    var c4Dot = UIButton(frame: CGRect(x: 270, y: 239, width: 13, height: 14))
+    var c4Dot = UIButton(frame: CGRect(x: 319, y: 350, width: 17, height: 18))
     
     
     
-    var d4Dot = UIButton(frame: CGRect(x: 270, y: 259, width: 13, height: 14))
+    var d4Dot = UIButton(frame: CGRect(x: 319, y: 374, width: 17, height: 18))
     
     
     
     //////////////////Fifth Row/////////////////////////
     
-    var a5Dot = UIButton(frame: CGRect(x: 287, y: 215, width: 13, height: 14))
+    var a5Dot = UIButton(frame: CGRect(x: 341, y: 313, width: 17, height: 18))
     
     
     
-    var b5Dot = UIButton(frame: CGRect(x: 287, y: 195, width: 13, height: 14))
+    var b5Dot = UIButton(frame: CGRect(x: 341, y: 289, width: 17, height: 18))
     
     
     
-    var c5Dot = UIButton(frame: CGRect(x: 270, y: 195, width: 13, height: 14))
+    var c5Dot = UIButton(frame: CGRect(x: 319, y: 289, width: 17, height: 18))
     
     
     
-    var d5Dot = UIButton(frame: CGRect(x: 270, y: 215, width: 13, height: 14))
+    var d5Dot = UIButton(frame: CGRect(x: 319, y: 313, width: 17, height: 18))
     
     
     
     //////////////////Sixth Row/////////////////////////
     
-    var a6Dot = UIButton(frame: CGRect(x: 287, y: 170, width: 13, height: 14))
+    var a6Dot = UIButton(frame: CGRect(x: 341, y: 251, width: 17, height: 18))
     
     
     
-    var b6Dot = UIButton(frame: CGRect(x: 287, y: 150, width: 13, height: 14))
+    var b6Dot = UIButton(frame: CGRect(x: 341, y: 227, width: 17, height: 18))
     
     
     
-    var c6Dot = UIButton(frame: CGRect(x: 270, y: 150, width: 13, height: 14))
+    var c6Dot = UIButton(frame: CGRect(x: 319, y: 227, width: 17, height: 18))
     
     
     
-    var d6Dot = UIButton(frame: CGRect(x: 270, y: 170, width: 13, height: 14))
+    var d6Dot = UIButton(frame: CGRect(x: 319, y: 251, width: 17, height: 18))
     
     
     
     //////////////////Seventh Row/////////////////////////
     
-    var a7Dot = UIButton(frame: CGRect(x: 287, y: 125, width: 13, height: 14))
+    var a7Dot = UIButton(frame: CGRect(x: 341, y: 188, width: 17, height: 18))
     
     
     
-    var b7Dot = UIButton(frame: CGRect(x: 287, y: 105, width: 13, height: 14))
+    var b7Dot = UIButton(frame: CGRect(x: 341, y: 164, width: 17, height: 18))
     
     
     
-    var c7Dot = UIButton(frame: CGRect(x: 270, y: 105, width: 13, height: 14))
+    var c7Dot = UIButton(frame: CGRect(x: 319, y: 164, width: 17, height: 18))
     
     
     
-    var d7Dot = UIButton(frame: CGRect(x: 270, y: 125, width: 13, height: 14))
+    var d7Dot = UIButton(frame: CGRect(x: 319, y: 188, width: 17, height: 18))
     
     
     
     //////////////////Eighth Row/////////////////////////
     
-    var a8Dot = UIButton(frame: CGRect(x: 287, y: 81, width: 13, height: 14))
+    var a8Dot = UIButton(frame: CGRect(x: 341, y: 126, width: 17, height: 18))
     
     
     
-    var b8Dot = UIButton(frame: CGRect(x: 287, y: 61, width: 13, height: 14))
+    var b8Dot = UIButton(frame: CGRect(x: 341, y: 102, width: 17, height: 18))
     
     
     
-    var c8Dot = UIButton(frame: CGRect(x: 270, y: 61, width: 13, height: 14))
+    var c8Dot = UIButton(frame: CGRect(x: 319, y: 102, width: 17, height: 18))
     
     
     
-    var d8Dot = UIButton(frame: CGRect(x: 270, y: 81, width: 13, height: 14))
+    var d8Dot = UIButton(frame: CGRect(x: 319, y: 126, width: 17, height: 18))
     
-
+    
     override func draw(_ rect: CGRect) {
-        MastermindStyleKit.drawMastermind()
+        Mastermind3StyleKit.drawMastermind()
         
         //////////////////Info Button/////////////////////////
         self.addSubview(infoButton)
@@ -644,7 +644,7 @@ class PCView: UIView {
         
         self.addSubview(d2Dot)
         
-    
+        
         
         //////////////////Third Row/////////////////////////
         
@@ -664,7 +664,7 @@ class PCView: UIView {
         
         self.addSubview(d3Dot)
         
-
+        
         
         //////////////////Fourth Row/////////////////////////
         
@@ -764,6 +764,6 @@ class PCView: UIView {
         
         
     }
-    
+
 
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		07388BCD1ED6005A0027041B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BCC1ED6005A0027041B /* LaunchViewController.swift */; };
+		07388BCF1EDA09380027041B /* Mastermind2StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BCE1EDA09380027041B /* Mastermind2StyleKit.swift */; };
+		07388BD11EDA0AC60027041B /* PCView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BD01EDA0AC60027041B /* PCView2.swift */; };
+		07388BD31EDA165F0027041B /* PCView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BD21EDA165F0027041B /* PCView3.swift */; };
+		07388BD51EDA16A40027041B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BD41EDA16A40027041B /* SecondViewController.swift */; };
+		07388BD71EDA23240027041B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BD61EDA23240027041B /* ThirdViewController.swift */; };
+		07388BD91EDA24300027041B /* Mastermind3StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07388BD81EDA24300027041B /* Mastermind3StyleKit.swift */; };
 		0742D7A31E3142EC006E1293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742D7A21E3142EC006E1293 /* AppDelegate.swift */; };
 		0742D7A51E3142EC006E1293 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742D7A41E3142EC006E1293 /* ViewController.swift */; };
 		0742D7A81E3142EC006E1293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0742D7A61E3142EC006E1293 /* Main.storyboard */; };
@@ -43,6 +49,12 @@
 
 /* Begin PBXFileReference section */
 		07388BCC1ED6005A0027041B /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		07388BCE1EDA09380027041B /* Mastermind2StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mastermind2StyleKit.swift; sourceTree = "<group>"; };
+		07388BD01EDA0AC60027041B /* PCView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCView2.swift; sourceTree = "<group>"; };
+		07388BD21EDA165F0027041B /* PCView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCView3.swift; sourceTree = "<group>"; };
+		07388BD41EDA16A40027041B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		07388BD61EDA23240027041B /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		07388BD81EDA24300027041B /* Mastermind3StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mastermind3StyleKit.swift; sourceTree = "<group>"; };
 		0742D79F1E3142EC006E1293 /* Mastermind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastermind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0742D7A21E3142EC006E1293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0742D7A41E3142EC006E1293 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,15 +125,21 @@
 		0742D7A11E3142EC006E1293 /* Mastermind */ = {
 			isa = PBXGroup;
 			children = (
-				0742D8441E35A80C006E1293 /* MastermindStyleKit.swift */,
 				0742D7A21E3142EC006E1293 /* AppDelegate.swift */,
+				0742D8441E35A80C006E1293 /* MastermindStyleKit.swift */,
+				07388BCE1EDA09380027041B /* Mastermind2StyleKit.swift */,
+				07388BD81EDA24300027041B /* Mastermind3StyleKit.swift */,
 				0742D8461E35A8E7006E1293 /* PCView.swift */,
+				07388BD01EDA0AC60027041B /* PCView2.swift */,
+				07388BD21EDA165F0027041B /* PCView3.swift */,
 				07388BCC1ED6005A0027041B /* LaunchViewController.swift */,
 				0742D7A41E3142EC006E1293 /* ViewController.swift */,
+				07388BD41EDA16A40027041B /* SecondViewController.swift */,
+				07388BD61EDA23240027041B /* ThirdViewController.swift */,
+				0742D7A61E3142EC006E1293 /* Main.storyboard */,
 				0742D7EB1E315D59006E1293 /* GameBoard.swift */,
 				0742D7D01E314315006E1293 /* Slot.swift */,
 				0742D7ED1E315E06006E1293 /* Ball.swift */,
-				0742D7A61E3142EC006E1293 /* Main.storyboard */,
 				0742D7A91E3142EC006E1293 /* Assets.xcassets */,
 				0742D7AB1E3142EC006E1293 /* LaunchScreen.storyboard */,
 				0742D7AE1E3142EC006E1293 /* Info.plist */,
@@ -284,14 +302,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07388BD51EDA16A40027041B /* SecondViewController.swift in Sources */,
+				07388BD11EDA0AC60027041B /* PCView2.swift in Sources */,
 				0742D7EC1E315D59006E1293 /* GameBoard.swift in Sources */,
 				0742D7A51E3142EC006E1293 /* ViewController.swift in Sources */,
 				0742D7EE1E315E06006E1293 /* Ball.swift in Sources */,
 				0742D7D11E314315006E1293 /* Slot.swift in Sources */,
+				07388BCF1EDA09380027041B /* Mastermind2StyleKit.swift in Sources */,
+				07388BD31EDA165F0027041B /* PCView3.swift in Sources */,
 				0742D8451E35A80C006E1293 /* MastermindStyleKit.swift in Sources */,
 				0742D8471E35A8E7006E1293 /* PCView.swift in Sources */,
 				0742D7A31E3142EC006E1293 /* AppDelegate.swift in Sources */,
 				07388BCD1ED6005A0027041B /* LaunchViewController.swift in Sources */,
+				07388BD91EDA24300027041B /* Mastermind3StyleKit.swift in Sources */,
+				07388BD71EDA23240027041B /* ThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,10 +19,23 @@ class LaunchViewController: UIViewController {
     }
     
     func gotoHome() {
+        let height = self.view.bounds.size.height
         
-        let homeVC = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        
-        self.present(homeVC, animated: true, completion: nil)
+        if height < 667.0 {
+            
+            let homeVC = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            
+            self.present(homeVC, animated: true, completion: nil)
+            
+        } else if height >= 667.0 && height < 736.0 {
+            let homeVC = self.storyboard!.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+            
+            self.present(homeVC, animated: true, completion: nil)
+        } else {
+            let homeVC = self.storyboard!.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
+            
+            self.present(homeVC, animated: true, completion: nil)
+        }
         
     }
 

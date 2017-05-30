@@ -1,24 +1,25 @@
 //
-//  ViewController.swift
+//  SecondViewController.swift
 //  Mastermind
 //
-//  Created by Adrian McDaniel on 1/19/17.
+//  Created by Adrian McDaniel on 5/27/17.
 //  Copyright © 2017 dssafsfsd. All rights reserved.
 //
 
 import UIKit
 import GameKit
 
-class ViewController: UIViewController {
+class SecondViewController: UIViewController {
     
-    var pcView = PCView()
+    var pcView = PCView2()
+    
     
     var balls : [Ball] = [.red, .orange, .yellow, .cyan, .green, .blue, .purple, .brown]
     
     var gameBoard = GameBoard(slots: [Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty), Slot(spaces: [.empty, .empty, .empty, .empty], lastPlayed: .empty)], fourBalls: [.green, .orange, .brown, .yellow])
     
     var selectedfromEightColor: Ball = .empty
-
+    
     
     var timer = Timer()
     
@@ -290,708 +291,707 @@ class ViewController: UIViewController {
         }
     }
     
-                func secondRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a2Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[1].spaces[0] = aBall
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b2Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[1].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c2Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[1].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d2Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[1].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a2Button.backgroundColor != UIColor.clear && pcView.b2Button.backgroundColor != UIColor.clear && pcView.c2Button.backgroundColor != UIColor.clear && pcView.d2Button.backgroundColor != UIColor.clear && pcView.a2Button.backgroundColor != pcView.b2Button.backgroundColor && pcView.a2Button.backgroundColor != pcView.c2Button.backgroundColor && pcView.a2Button.backgroundColor != pcView.d2Button.backgroundColor && pcView.b2Button.backgroundColor != pcView.c2Button.backgroundColor && pcView.b2Button.backgroundColor != pcView.d2Button.backgroundColor && pcView.c2Button.backgroundColor != pcView.d2Button.backgroundColor {
-                            
-                            print("-----------2-----------")
-                            print(gameBoard.slots[1])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[1])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            secondRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            pcView.a3Button.isEnabled = true
-                            pcView.b3Button.isEnabled = true
-                            pcView.c3Button.isEnabled = true
-                            pcView.d3Button.isEnabled = true
-                            pcView.ok3Button.isEnabled = true
-                            pcView.ok3Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a2Button.isEnabled = false
-                            pcView.b2Button.isEnabled = false
-                            pcView.c2Button.isEnabled = false
-                            pcView.d2Button.isEnabled = false
-                            pcView.ok2Button.isEnabled = false
-                            pcView.ok2Button.backgroundColor = UIColor.darkGray
-                            
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                            
-                        } else {
-                            
-                            print("ROW TWO: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func thirdRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a3Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[2].spaces[0] = aBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b3Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[2].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c3Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[2].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d3Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[2].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a3Button.backgroundColor != UIColor.clear && pcView.b3Button.backgroundColor != UIColor.clear && pcView.c3Button.backgroundColor != UIColor.clear && pcView.d3Button.backgroundColor != UIColor.clear && pcView.a3Button.backgroundColor != pcView.b3Button.backgroundColor && pcView.a3Button.backgroundColor != pcView.c3Button.backgroundColor && pcView.a3Button.backgroundColor != pcView.d3Button.backgroundColor && pcView.b3Button.backgroundColor != pcView.c3Button.backgroundColor && pcView.b3Button.backgroundColor != pcView.d3Button.backgroundColor && pcView.c3Button.backgroundColor != pcView.d3Button.backgroundColor {
-                            
-                            
-                            print("-----------3-----------")
-                            print(gameBoard.slots[2])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[2])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            
-                            thirdRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            pcView.a4Button.isEnabled = true
-                            pcView.b4Button.isEnabled = true
-                            pcView.c4Button.isEnabled = true
-                            pcView.d4Button.isEnabled = true
-                            pcView.ok4Button.isEnabled = true
-                            pcView.ok4Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a3Button.isEnabled = false
-                            pcView.b3Button.isEnabled = false
-                            pcView.c3Button.isEnabled = false
-                            pcView.d3Button.isEnabled = false
-                            pcView.ok3Button.isEnabled = false
-                            pcView.ok3Button.backgroundColor = UIColor.darkGray
-                            
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                            
-                        } else {
-                            
-                            print("ROW THREE: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func fourthRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a4Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[3].spaces[0] = aBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b4Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[3].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c4Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[3].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d4Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[3].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a4Button.backgroundColor != UIColor.clear && pcView.b4Button.backgroundColor != UIColor.clear && pcView.c4Button.backgroundColor != UIColor.clear && pcView.d4Button.backgroundColor != UIColor.clear && pcView.a4Button.backgroundColor != pcView.b4Button.backgroundColor && pcView.a4Button.backgroundColor != pcView.c4Button.backgroundColor && pcView.a4Button.backgroundColor != pcView.d4Button.backgroundColor && pcView.b4Button.backgroundColor != pcView.c4Button.backgroundColor && pcView.b4Button.backgroundColor != pcView.d4Button.backgroundColor && pcView.c4Button.backgroundColor != pcView.d4Button.backgroundColor {
-                            
-                            
-                            print("-----------4-----------")
-                            print(gameBoard.slots[3])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[3])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            fourthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            pcView.a5Button.isEnabled = true
-                            pcView.b5Button.isEnabled = true
-                            pcView.c5Button.isEnabled = true
-                            pcView.d5Button.isEnabled = true
-                            pcView.ok5Button.isEnabled = true
-                            pcView.ok5Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a4Button.isEnabled = false
-                            pcView.b4Button.isEnabled = false
-                            pcView.c4Button.isEnabled = false
-                            pcView.d4Button.isEnabled = false
-                            pcView.ok4Button.isEnabled = false
-                            pcView.ok4Button.backgroundColor = UIColor.darkGray
-                            
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                            
-                        } else {
-                            
-                            print("ROW FOUR: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func fifthRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a5Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[4].spaces[0] = aBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b5Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[4].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c5Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[4].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d5Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[4].spaces[3] = dBall
-                        
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a5Button.backgroundColor != UIColor.clear && pcView.b5Button.backgroundColor != UIColor.clear && pcView.c5Button.backgroundColor != UIColor.clear && pcView.d5Button.backgroundColor != UIColor.clear && pcView.a5Button.backgroundColor != pcView.b5Button.backgroundColor && pcView.a5Button.backgroundColor != pcView.c5Button.backgroundColor && pcView.a5Button.backgroundColor != pcView.d5Button.backgroundColor && pcView.b5Button.backgroundColor != pcView.c5Button.backgroundColor && pcView.b5Button.backgroundColor != pcView.d5Button.backgroundColor && pcView.c5Button.backgroundColor != pcView.d5Button.backgroundColor {
-                            
-                            
-                            print("-----------5-----------")
-                            print(gameBoard.slots[4])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[4])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            fifthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            pcView.a6Button.isEnabled = true
-                            pcView.b6Button.isEnabled = true
-                            pcView.c6Button.isEnabled = true
-                            pcView.d6Button.isEnabled = true
-                            pcView.ok6Button.isEnabled = true
-                            pcView.ok6Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a5Button.isEnabled = false
-                            pcView.b5Button.isEnabled = false
-                            pcView.c5Button.isEnabled = false
-                            pcView.d5Button.isEnabled = false
-                            pcView.ok5Button.isEnabled = false
-                            pcView.ok5Button.backgroundColor = UIColor.darkGray
-                            
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                            
-                        } else {
-                            
-                            print("ROW FIVE: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func sixthRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a6Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[5].spaces[0] = aBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b6Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[5].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c6Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[5].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d6Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[5].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a6Button.backgroundColor != UIColor.clear && pcView.b6Button.backgroundColor != UIColor.clear && pcView.c6Button.backgroundColor != UIColor.clear && pcView.d6Button.backgroundColor != UIColor.clear && pcView.a6Button.backgroundColor != pcView.b6Button.backgroundColor && pcView.a6Button.backgroundColor != pcView.c6Button.backgroundColor && pcView.a6Button.backgroundColor != pcView.d6Button.backgroundColor && pcView.b6Button.backgroundColor != pcView.c6Button.backgroundColor && pcView.b6Button.backgroundColor != pcView.d6Button.backgroundColor && pcView.c6Button.backgroundColor != pcView.d6Button.backgroundColor {
-                            
-                            
-                            print("-----------6-----------")
-                            print(gameBoard.slots[5])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[5])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            sixthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            pcView.a7Button.isEnabled = true
-                            pcView.b7Button.isEnabled = true
-                            pcView.c7Button.isEnabled = true
-                            pcView.d7Button.isEnabled = true
-                            pcView.ok7Button.isEnabled = true
-                            pcView.ok7Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a6Button.isEnabled = false
-                            pcView.b6Button.isEnabled = false
-                            pcView.c6Button.isEnabled = false
-                            pcView.d6Button.isEnabled = false
-                            pcView.ok6Button.isEnabled = false
-                            pcView.ok6Button.backgroundColor = UIColor.darkGray
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                            
-                        } else {
-                            
-                            print("ROW SIX: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func seventhRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a7Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[6].spaces[0] = aBall
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b7Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[6].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c7Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[6].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d7Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[6].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a7Button.backgroundColor != UIColor.clear && pcView.b7Button.backgroundColor != UIColor.clear && pcView.c7Button.backgroundColor != UIColor.clear && pcView.d7Button.backgroundColor != UIColor.clear && pcView.a7Button.backgroundColor != pcView.b7Button.backgroundColor && pcView.a7Button.backgroundColor != pcView.c7Button.backgroundColor && pcView.a7Button.backgroundColor != pcView.d7Button.backgroundColor && pcView.b7Button.backgroundColor != pcView.c7Button.backgroundColor && pcView.b7Button.backgroundColor != pcView.d7Button.backgroundColor && pcView.c7Button.backgroundColor != pcView.d7Button.backgroundColor {
-                            
-                            print("-----------7-----------")
-                            print(gameBoard.slots[6])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[6])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
-                            
-                            seventhRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                            
-                            
-                            pcView.a8Button.isEnabled = true
-                            pcView.b8Button.isEnabled = true
-                            pcView.c8Button.isEnabled = true
-                            pcView.d8Button.isEnabled = true
-                            pcView.ok8Button.isEnabled = true
-                            pcView.ok8Button.backgroundColor = UIColor.clear
-                            
-                            gameOver()
-                            
-                            pcView.a7Button.isEnabled = false
-                            pcView.b7Button.isEnabled = false
-                            pcView.c7Button.isEnabled = false
-                            pcView.d7Button.isEnabled = false
-                            pcView.ok7Button.isEnabled = false
-                            pcView.ok7Button.backgroundColor = UIColor.darkGray
-                            
-                            gameBoard.blackBalls = 0
-                            gameBoard.whiteBalls = 0
-                            
-                        
-                            
-                        } else {
-                            
-                            print("ROW SEVEN: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
-                }
-                
-                func eighthRowColor(sender: UIButton!) {
-                    let btnsendtag: UIButton = sender
-                    
-                    var aBall: Ball = .empty
-                    var bBall: Ball = .empty
-                    var cBall: Ball = .empty
-                    var dBall: Ball = .empty
-                    
-                    if btnsendtag.tag == 1 {
-                        pcView.a8Button.backgroundColor = selectedfromEightColor.value
-                        
-                        
-                        aBall = selectedfromEightColor
-                        gameBoard.slots[7].spaces[0] = aBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 2 {
-                        pcView.b8Button.backgroundColor = selectedfromEightColor.value
-                        
-                        bBall = selectedfromEightColor
-                        gameBoard.slots[7].spaces[1] = bBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 3 {
-                        pcView.c8Button.backgroundColor = selectedfromEightColor.value
-                        
-                        cBall = selectedfromEightColor
-                        gameBoard.slots[7].spaces[2] = cBall
-                        
-                        
-                    }
-                    
-                    if btnsendtag.tag == 4 {
-                        pcView.d8Button.backgroundColor = selectedfromEightColor.value
-                        
-                        dBall = selectedfromEightColor
-                        gameBoard.slots[7].spaces[3] = dBall
-                        
-                    }
-                    
-                    
-                    if btnsendtag.tag == 5 {
-                        
-                        if pcView.a8Button.backgroundColor != UIColor.clear && pcView.b8Button.backgroundColor != UIColor.clear && pcView.c8Button.backgroundColor != UIColor.clear && pcView.d8Button.backgroundColor != UIColor.clear && pcView.a8Button.backgroundColor != pcView.b8Button.backgroundColor && pcView.a8Button.backgroundColor != pcView.c8Button.backgroundColor && pcView.a8Button.backgroundColor != pcView.d8Button.backgroundColor && pcView.b8Button.backgroundColor != pcView.c8Button.backgroundColor && pcView.b8Button.backgroundColor != pcView.d8Button.backgroundColor && pcView.c8Button.backgroundColor != pcView.d8Button.backgroundColor {
-                            
-                            
-                            print("-----------8-----------")
-                            print(gameBoard.slots[7])
-                            
-                            gameBoard.determineCorrect(slot: gameBoard.slots[7])
-                            
-                            print(gameBoard.blackBalls)
-                            print(gameBoard.whiteBalls)
+    func secondRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a2Button.backgroundColor = selectedfromEightColor.value
             
-                            
-                            eighthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
-                            
-                        
-                            pcView.a8Button.isEnabled = false
-                            pcView.b8Button.isEnabled = false
-                            pcView.c8Button.isEnabled = false
-                            pcView.d8Button.isEnabled = false
-                            pcView.ok8Button.isEnabled = false
-                            pcView.ok8Button.backgroundColor = UIColor.darkGray
-                            
-                            gameOver()
-                            
-                            if gameBoard.blackBalls != 4 {
-                                
-                                
-                                pcView.redButton.isEnabled = false
-                                pcView.redButton.backgroundColor = UIColor.lightGray
-                                pcView.orangeButton.isEnabled = false
-                                pcView.orangeButton.backgroundColor = UIColor.lightGray
-                                pcView.cyanButton.isEnabled = false
-                                pcView.cyanButton.backgroundColor = UIColor.lightGray
-                                pcView.purpleButton.isEnabled = false
-                                pcView.purpleButton.backgroundColor = UIColor.lightGray
-                                
-                                pcView.yellowButton.isEnabled = false
-                                pcView.yellowButton.backgroundColor = gameBoard.fourBalls[0].value
-                                pcView.greenButton.isEnabled = false
-                                pcView.greenButton.backgroundColor = gameBoard.fourBalls[1].value
-                                pcView.brownButton.isEnabled = false
-                                pcView.brownButton.backgroundColor = gameBoard.fourBalls[2].value
-                                pcView.blueButton.isEnabled = false
-                                pcView.blueButton.backgroundColor = gameBoard.fourBalls[3].value
-                                
-                                pcView.yellowButton.layer.borderWidth = 4.0
-                                pcView.greenButton.layer.borderWidth = 4.0
-                                pcView.brownButton.layer.borderWidth = 4.0
-                                pcView.blueButton.layer.borderWidth = 4.0
-                                pcView.redButton.layer.borderWidth = 0
-                                pcView.orangeButton.layer.borderWidth = 0
-                                pcView.cyanButton.layer.borderWidth = 0
-                                pcView.purpleButton.layer.borderWidth = 0
-                                
-                                pcView.yellowButton.layer.borderColor = UIColor.black.cgColor
-                                pcView.greenButton.layer.borderColor = UIColor.black.cgColor
-                                pcView.brownButton.layer.borderColor = UIColor.black.cgColor
-                                pcView.blueButton.layer.borderColor = UIColor.black.cgColor
-                                
-                                self.view.backgroundColor = UIColor.black
-                                
-                                let ac = UIAlertController(title: "GAME OVER", message: "The Correct Color Code is Below.", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "PLAY AGAIN", style: .default, handler: gameOptions)
-                                
-                                
-                                ac.addAction(action)
-                                
-                                present(ac, animated: true, completion: nil)
-                            }
-                            
-                            
-                        } else {
-                            
-                            print("ROW EIGHT: All four spaces must have different colors and you can't leave a space blank")
-                            
-                            let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            
-                            ac.addAction(action)
-                            
-                            present(ac, animated: true, completion: nil)
-                        }
-                        
-                    }
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[1].spaces[0] = aBall
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b2Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[1].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c2Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[1].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d2Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[1].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a2Button.backgroundColor != UIColor.clear && pcView.b2Button.backgroundColor != UIColor.clear && pcView.c2Button.backgroundColor != UIColor.clear && pcView.d2Button.backgroundColor != UIColor.clear && pcView.a2Button.backgroundColor != pcView.b2Button.backgroundColor && pcView.a2Button.backgroundColor != pcView.c2Button.backgroundColor && pcView.a2Button.backgroundColor != pcView.d2Button.backgroundColor && pcView.b2Button.backgroundColor != pcView.c2Button.backgroundColor && pcView.b2Button.backgroundColor != pcView.d2Button.backgroundColor && pcView.c2Button.backgroundColor != pcView.d2Button.backgroundColor {
+                
+                print("-----------2-----------")
+                print(gameBoard.slots[1])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[1])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                secondRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                pcView.a3Button.isEnabled = true
+                pcView.b3Button.isEnabled = true
+                pcView.c3Button.isEnabled = true
+                pcView.d3Button.isEnabled = true
+                pcView.ok3Button.isEnabled = true
+                pcView.ok3Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a2Button.isEnabled = false
+                pcView.b2Button.isEnabled = false
+                pcView.c2Button.isEnabled = false
+                pcView.d2Button.isEnabled = false
+                pcView.ok2Button.isEnabled = false
+                pcView.ok2Button.backgroundColor = UIColor.darkGray
+                
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+            } else {
+                
+                print("ROW TWO: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func thirdRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a3Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[2].spaces[0] = aBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b3Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[2].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c3Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[2].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d3Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[2].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a3Button.backgroundColor != UIColor.clear && pcView.b3Button.backgroundColor != UIColor.clear && pcView.c3Button.backgroundColor != UIColor.clear && pcView.d3Button.backgroundColor != UIColor.clear && pcView.a3Button.backgroundColor != pcView.b3Button.backgroundColor && pcView.a3Button.backgroundColor != pcView.c3Button.backgroundColor && pcView.a3Button.backgroundColor != pcView.d3Button.backgroundColor && pcView.b3Button.backgroundColor != pcView.c3Button.backgroundColor && pcView.b3Button.backgroundColor != pcView.d3Button.backgroundColor && pcView.c3Button.backgroundColor != pcView.d3Button.backgroundColor {
+                
+                
+                print("-----------3-----------")
+                print(gameBoard.slots[2])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[2])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                
+                thirdRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                pcView.a4Button.isEnabled = true
+                pcView.b4Button.isEnabled = true
+                pcView.c4Button.isEnabled = true
+                pcView.d4Button.isEnabled = true
+                pcView.ok4Button.isEnabled = true
+                pcView.ok4Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a3Button.isEnabled = false
+                pcView.b3Button.isEnabled = false
+                pcView.c3Button.isEnabled = false
+                pcView.d3Button.isEnabled = false
+                pcView.ok3Button.isEnabled = false
+                pcView.ok3Button.backgroundColor = UIColor.darkGray
+                
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+            } else {
+                
+                print("ROW THREE: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func fourthRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a4Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[3].spaces[0] = aBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b4Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[3].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c4Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[3].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d4Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[3].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a4Button.backgroundColor != UIColor.clear && pcView.b4Button.backgroundColor != UIColor.clear && pcView.c4Button.backgroundColor != UIColor.clear && pcView.d4Button.backgroundColor != UIColor.clear && pcView.a4Button.backgroundColor != pcView.b4Button.backgroundColor && pcView.a4Button.backgroundColor != pcView.c4Button.backgroundColor && pcView.a4Button.backgroundColor != pcView.d4Button.backgroundColor && pcView.b4Button.backgroundColor != pcView.c4Button.backgroundColor && pcView.b4Button.backgroundColor != pcView.d4Button.backgroundColor && pcView.c4Button.backgroundColor != pcView.d4Button.backgroundColor {
+                
+                
+                print("-----------4-----------")
+                print(gameBoard.slots[3])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[3])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                fourthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                pcView.a5Button.isEnabled = true
+                pcView.b5Button.isEnabled = true
+                pcView.c5Button.isEnabled = true
+                pcView.d5Button.isEnabled = true
+                pcView.ok5Button.isEnabled = true
+                pcView.ok5Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a4Button.isEnabled = false
+                pcView.b4Button.isEnabled = false
+                pcView.c4Button.isEnabled = false
+                pcView.d4Button.isEnabled = false
+                pcView.ok4Button.isEnabled = false
+                pcView.ok4Button.backgroundColor = UIColor.darkGray
+                
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+            } else {
+                
+                print("ROW FOUR: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func fifthRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a5Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[4].spaces[0] = aBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b5Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[4].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c5Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[4].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d5Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[4].spaces[3] = dBall
+            
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a5Button.backgroundColor != UIColor.clear && pcView.b5Button.backgroundColor != UIColor.clear && pcView.c5Button.backgroundColor != UIColor.clear && pcView.d5Button.backgroundColor != UIColor.clear && pcView.a5Button.backgroundColor != pcView.b5Button.backgroundColor && pcView.a5Button.backgroundColor != pcView.c5Button.backgroundColor && pcView.a5Button.backgroundColor != pcView.d5Button.backgroundColor && pcView.b5Button.backgroundColor != pcView.c5Button.backgroundColor && pcView.b5Button.backgroundColor != pcView.d5Button.backgroundColor && pcView.c5Button.backgroundColor != pcView.d5Button.backgroundColor {
+                
+                
+                print("-----------5-----------")
+                print(gameBoard.slots[4])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[4])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                fifthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                pcView.a6Button.isEnabled = true
+                pcView.b6Button.isEnabled = true
+                pcView.c6Button.isEnabled = true
+                pcView.d6Button.isEnabled = true
+                pcView.ok6Button.isEnabled = true
+                pcView.ok6Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a5Button.isEnabled = false
+                pcView.b5Button.isEnabled = false
+                pcView.c5Button.isEnabled = false
+                pcView.d5Button.isEnabled = false
+                pcView.ok5Button.isEnabled = false
+                pcView.ok5Button.backgroundColor = UIColor.darkGray
+                
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+            } else {
+                
+                print("ROW FIVE: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func sixthRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a6Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[5].spaces[0] = aBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b6Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[5].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c6Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[5].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d6Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[5].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a6Button.backgroundColor != UIColor.clear && pcView.b6Button.backgroundColor != UIColor.clear && pcView.c6Button.backgroundColor != UIColor.clear && pcView.d6Button.backgroundColor != UIColor.clear && pcView.a6Button.backgroundColor != pcView.b6Button.backgroundColor && pcView.a6Button.backgroundColor != pcView.c6Button.backgroundColor && pcView.a6Button.backgroundColor != pcView.d6Button.backgroundColor && pcView.b6Button.backgroundColor != pcView.c6Button.backgroundColor && pcView.b6Button.backgroundColor != pcView.d6Button.backgroundColor && pcView.c6Button.backgroundColor != pcView.d6Button.backgroundColor {
+                
+                
+                print("-----------6-----------")
+                print(gameBoard.slots[5])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[5])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                sixthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                pcView.a7Button.isEnabled = true
+                pcView.b7Button.isEnabled = true
+                pcView.c7Button.isEnabled = true
+                pcView.d7Button.isEnabled = true
+                pcView.ok7Button.isEnabled = true
+                pcView.ok7Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a6Button.isEnabled = false
+                pcView.b6Button.isEnabled = false
+                pcView.c6Button.isEnabled = false
+                pcView.d6Button.isEnabled = false
+                pcView.ok6Button.isEnabled = false
+                pcView.ok6Button.backgroundColor = UIColor.darkGray
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+            } else {
+                
+                print("ROW SIX: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func seventhRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a7Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[6].spaces[0] = aBall
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b7Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[6].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c7Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[6].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d7Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[6].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a7Button.backgroundColor != UIColor.clear && pcView.b7Button.backgroundColor != UIColor.clear && pcView.c7Button.backgroundColor != UIColor.clear && pcView.d7Button.backgroundColor != UIColor.clear && pcView.a7Button.backgroundColor != pcView.b7Button.backgroundColor && pcView.a7Button.backgroundColor != pcView.c7Button.backgroundColor && pcView.a7Button.backgroundColor != pcView.d7Button.backgroundColor && pcView.b7Button.backgroundColor != pcView.c7Button.backgroundColor && pcView.b7Button.backgroundColor != pcView.d7Button.backgroundColor && pcView.c7Button.backgroundColor != pcView.d7Button.backgroundColor {
+                
+                print("-----------7-----------")
+                print(gameBoard.slots[6])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[6])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                seventhRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                
+                
+                pcView.a8Button.isEnabled = true
+                pcView.b8Button.isEnabled = true
+                pcView.c8Button.isEnabled = true
+                pcView.d8Button.isEnabled = true
+                pcView.ok8Button.isEnabled = true
+                pcView.ok8Button.backgroundColor = UIColor.clear
+                
+                gameOver()
+                
+                pcView.a7Button.isEnabled = false
+                pcView.b7Button.isEnabled = false
+                pcView.c7Button.isEnabled = false
+                pcView.d7Button.isEnabled = false
+                pcView.ok7Button.isEnabled = false
+                pcView.ok7Button.backgroundColor = UIColor.darkGray
+                
+                gameBoard.blackBalls = 0
+                gameBoard.whiteBalls = 0
+                
+                
+                
+            } else {
+                
+                print("ROW SEVEN: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func eighthRowColor(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        
+        var aBall: Ball = .empty
+        var bBall: Ball = .empty
+        var cBall: Ball = .empty
+        var dBall: Ball = .empty
+        
+        if btnsendtag.tag == 1 {
+            pcView.a8Button.backgroundColor = selectedfromEightColor.value
+            
+            
+            aBall = selectedfromEightColor
+            gameBoard.slots[7].spaces[0] = aBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 2 {
+            pcView.b8Button.backgroundColor = selectedfromEightColor.value
+            
+            bBall = selectedfromEightColor
+            gameBoard.slots[7].spaces[1] = bBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 3 {
+            pcView.c8Button.backgroundColor = selectedfromEightColor.value
+            
+            cBall = selectedfromEightColor
+            gameBoard.slots[7].spaces[2] = cBall
+            
+            
+        }
+        
+        if btnsendtag.tag == 4 {
+            pcView.d8Button.backgroundColor = selectedfromEightColor.value
+            
+            dBall = selectedfromEightColor
+            gameBoard.slots[7].spaces[3] = dBall
+            
+        }
+        
+        
+        if btnsendtag.tag == 5 {
+            
+            if pcView.a8Button.backgroundColor != UIColor.clear && pcView.b8Button.backgroundColor != UIColor.clear && pcView.c8Button.backgroundColor != UIColor.clear && pcView.d8Button.backgroundColor != UIColor.clear && pcView.a8Button.backgroundColor != pcView.b8Button.backgroundColor && pcView.a8Button.backgroundColor != pcView.c8Button.backgroundColor && pcView.a8Button.backgroundColor != pcView.d8Button.backgroundColor && pcView.b8Button.backgroundColor != pcView.c8Button.backgroundColor && pcView.b8Button.backgroundColor != pcView.d8Button.backgroundColor && pcView.c8Button.backgroundColor != pcView.d8Button.backgroundColor {
+                
+                
+                print("-----------8-----------")
+                print(gameBoard.slots[7])
+                
+                gameBoard.determineCorrect(slot: gameBoard.slots[7])
+                
+                print(gameBoard.blackBalls)
+                print(gameBoard.whiteBalls)
+                
+                
+                eighthRowHint(gameBoard.blackBalls, gameBoard.whiteBalls)
+                
+                
+                pcView.a8Button.isEnabled = false
+                pcView.b8Button.isEnabled = false
+                pcView.c8Button.isEnabled = false
+                pcView.d8Button.isEnabled = false
+                pcView.ok8Button.isEnabled = false
+                pcView.ok8Button.backgroundColor = UIColor.darkGray
+                
+                gameOver()
+                
+                if gameBoard.blackBalls != 4 {
+                    
+                    
+                    pcView.redButton.isEnabled = false
+                    pcView.redButton.backgroundColor = UIColor.lightGray
+                    pcView.orangeButton.isEnabled = false
+                    pcView.orangeButton.backgroundColor = UIColor.lightGray
+                    pcView.cyanButton.isEnabled = false
+                    pcView.cyanButton.backgroundColor = UIColor.lightGray
+                    pcView.purpleButton.isEnabled = false
+                    pcView.purpleButton.backgroundColor = UIColor.lightGray
+                    
+                    pcView.yellowButton.isEnabled = false
+                    pcView.yellowButton.backgroundColor = gameBoard.fourBalls[0].value
+                    pcView.greenButton.isEnabled = false
+                    pcView.greenButton.backgroundColor = gameBoard.fourBalls[1].value
+                    pcView.brownButton.isEnabled = false
+                    pcView.brownButton.backgroundColor = gameBoard.fourBalls[2].value
+                    pcView.blueButton.isEnabled = false
+                    pcView.blueButton.backgroundColor = gameBoard.fourBalls[3].value
+                    
+                    pcView.yellowButton.layer.borderWidth = 4.0
+                    pcView.greenButton.layer.borderWidth = 4.0
+                    pcView.brownButton.layer.borderWidth = 4.0
+                    pcView.blueButton.layer.borderWidth = 4.0
+                    pcView.redButton.layer.borderWidth = 0
+                    pcView.orangeButton.layer.borderWidth = 0
+                    pcView.cyanButton.layer.borderWidth = 0
+                    pcView.purpleButton.layer.borderWidth = 0
+                    
+                    pcView.yellowButton.layer.borderColor = UIColor.black.cgColor
+                    pcView.greenButton.layer.borderColor = UIColor.black.cgColor
+                    pcView.brownButton.layer.borderColor = UIColor.black.cgColor
+                    pcView.blueButton.layer.borderColor = UIColor.black.cgColor
+                    
+                    self.view.backgroundColor = UIColor.black
+                    
+                    let ac = UIAlertController(title: "GAME OVER", message: "The Correct Color Code is Below.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "PLAY AGAIN", style: .default, handler: gameOptions)
+                    
+                    ac.addAction(action)
+                    
+                    present(ac, animated: true, completion: nil)
                 }
+                
+                
+            } else {
+                
+                print("ROW EIGHT: All four spaces must have different colors and you can't leave a space blank")
+                
+                let ac = UIAlertController(title: "Please Try Again", message: "All four spaces must have different colors and you can't leave a space blank", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true, completion: nil)
+            }
+            
+        }
+    }
     
     
     func firstRowHint(_ blackBalls: Int,_ whiteBalls: Int) {
@@ -1696,7 +1696,7 @@ class ViewController: UIViewController {
         
         
         if gameBoard.slotIsAWinner() == true {
-        
+            
             
             pcView.a2Button.isEnabled = false
             pcView.b2Button.isEnabled = false
@@ -1790,7 +1790,7 @@ class ViewController: UIViewController {
             
             present(ac, animated: true, completion: nil)
             
-    }
+        }
     }
     
     func updateColor() {
@@ -1822,7 +1822,7 @@ class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
         
         present(homeVC, animated: false, completion: nil)
         return
@@ -1832,7 +1832,7 @@ class ViewController: UIViewController {
     func infoSelect(sender: UIButton!) {
         print("pressed info button")
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.black
         
         let ac = UIAlertController(title: "HOW TO PLAY", message: "The computer generates a random code of 4 different colors.  Using the 8 colors provided below, you will have 8 chances to guess the 4 correct colors and the order of the colors.\n\nTo choose a color, tap on a color from the bottom and then tap where you want to place the color.  You can only place colors in the row with the 'OK' button.  Once you have placed 4 different colors in that horizontal row, tap the 'OK' button to continue.\n\nThe computer will show a white dot for each color you have guessed correctly, but is in the wrong position.  The computer will show a black dot for each color that is correct and in the right position.", preferredStyle: .alert)
         let action = UIAlertAction(title: "CLOSE", style: .default, handler: nil)
@@ -1845,7 +1845,7 @@ class ViewController: UIViewController {
     func menuSelect(sender: UIButton!) {
         print("pressed menu button")
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.black
         
         let ac = UIAlertController(title: title, message: "MENU", preferredStyle: .alert)
         let howToAction = UIAlertAction(title: "HOW TO PLAY", style: .default, handler: howToPlay)
@@ -1889,7 +1889,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        view.addSubview(pcView)
+        //view.addSubview(pcView)
         
         //Color Shuffle
         let shuffledBalls: [Ball] = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: balls) as! [Ball]
@@ -1914,7 +1914,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = shuffledBalls[6].value
         
-       
+        
         //Button Targets
         
         pcView.infoButton.addTarget(self, action: #selector(infoSelect), for: .touchUpInside)
@@ -2203,7 +2203,7 @@ class ViewController: UIViewController {
     
     
     func instructions() {
-        let ac = UIAlertController(title: "HOW TO PLAY", message: "The computer generates a random code of 4 different colors.  Using the 8 colors provided below, you will have 8 chances to guess the 4 correct colors and the order of the colors.\n\nTo choose a color, tap on a color from the bottom and then tap where you want to place the color.  You can only place colors in the row with the 'OK' button.  Once you have placed 4 different colors in that horizontal row, tap the 'OK' button to continue.\n\nThe computer will show a white dot for each color you have guessed correctly, but is in the wrong position.  The computer will show a black dot for each color that is correct and in the right position.\n\n\n\nNOTES:vThe white button in the top left corner with the three horizontal lines represents the 'Menu' Button.  The 'i' button in the top right corner will remind you how to play.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "HOW TO PLAY", message: "The computer generates a random code of 4 different colors.  Using the 8 colors provided below, you will have 8 chances to guess the 4 correct colors and the order of the colors.\n\nTo choose a color, tap on a color from the bottom and then tap where you want to place the color.  You can only place colors in the row with the 'OK' button.  Once you have placed 4 different colors in that horizontal row, tap the 'OK' button to continue.\n\nThe computer will show a white dot for each color you have guessed correctly, but is in the wrong position.  The computer will show a black dot for each color that is correct and in the right position.\n\n\n\nNOTES: The white button in the top left corner with the three horizontal lines represents the 'Menu' Button.  The 'i' button in the top right corner will remind you how to play.", preferredStyle: .alert)
         let action = UIAlertAction(title: "CLOSE", style: .default, handler: nil)
         
         ac.addAction(action)
@@ -2212,5 +2212,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-

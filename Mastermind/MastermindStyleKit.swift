@@ -629,6 +629,12 @@ public class MastermindStyleKit : NSObject {
         UIColor.darkGray.setFill()
         rectangle80Path.fill()
         
+        //// Rectangle 81 Drawing
+        let rectangle81Path = UIBezierPath(rect: CGRect(x: 1, y: 418, width: 318, height: 53))
+        UIColor.darkGray.setStroke()
+        rectangle81Path.lineWidth = 3
+        rectangle81Path.stroke()
+        
         context.restoreGState()
         
     }
