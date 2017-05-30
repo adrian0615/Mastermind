@@ -6,8 +6,10 @@ Mastermind is a difficult puzzle game, in which one player tries to guess the co
 
 
 GETTING STARTED
-Prerequisites - You will need to have Xcode 8.3.1 or higher and an updated iPhone simulator/iOS device with iOS 10 or higher to run this application
-Instructions - Download the repository from Github and save it to your computer.  Using Xcode, open "Mastermind.xcodeproj".  If you have an iPhone connect it to your computer and select it from the device selection dropdown menu in the upper left corner of the Xcode window. Or select an iPhone 6 or higher to use the simulator.  Build and run the app by pressing "Command+R" or clicking the triangle "Play" button in the upper left corner of the Xcode window. 
+Prerequisites - You will need to have Xcode 8.3.1 or higher and an updated iPhone simulator/iOS device with iOS 9 or higher to run this application
+For Xcode Use - Download the repository from Github and save it to your computer.  Using Xcode, open "Mastermind.xcodeproj".  If you have an iPhone connect it to your computer and select it from the device selection dropdown menu in the upper left corner of the Xcode window. Or select an iPhone 6 or higher to use the simulator.  Build and run the app by pressing "Command+R" or clicking the triangle "Play" button in the upper left corner of the Xcode window.
+For Device Use - Go to the App Store to Download the app.  Once download is complete, click on the app icon on your device's screen.
+
 
 
 TESTING
@@ -25,6 +27,8 @@ I learned the importance of testing while making this application.  Because of t
 AUTHOR(S)
 Adrian McDaniel
 
+SUPPORT
+If you have any issues regarding the application.  Please contact me at adrianmobiledev@gmail.com
 
 
 ACKNOWLEDGEMENTS
